@@ -8,7 +8,7 @@ function App() {
     setValue(value + 1);
   };
 
-  const setToLocalStorage = () => {};
+  const setToLocalStorage = () => localStorage.setItem('counterVal', JSON.stringify(value));
 
   const getFromLocalStorage = () => {};
 

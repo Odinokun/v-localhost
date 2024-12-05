@@ -12,7 +12,10 @@ function App() {
     setValue(value + 1);
   };
 
-  const setToLocalStorage = () => localStorage.setItem('counterVal', JSON.stringify(value));
+  const setToLocalStorage = () => {
+    localStorage.setItem('counterVal', JSON.stringify(value));
+    localStorage.setItem('trash value', JSON.stringify(value + 100500));
+  };
 
   const getFromLocalStorage = () => {
     const lsVal = localStorage.getItem('counterVal');
@@ -20,6 +23,8 @@ function App() {
       setValue(JSON.parse(lsVal));
     }
   };
+
+  const removeFromLocalStorage = () => localStorage.removeItem('trash value');
 
   const clearLocalStorage = () => {
     localStorage.clear();
@@ -32,6 +37,7 @@ function App() {
       <button onClick={counterHandler}>INC</button>
       <button onClick={setToLocalStorage}>Set to LS</button>
       <button onClick={getFromLocalStorage}>Get from LS</button>
+      <button onClick={removeFromLocalStorage}>Remove from LS</button>
       <button onClick={clearLocalStorage}>Clear LS</button>
     </div>
   );

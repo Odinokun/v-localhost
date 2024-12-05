@@ -10,7 +10,12 @@ function App() {
 
   const setToLocalStorage = () => localStorage.setItem('counterVal', JSON.stringify(value));
 
-  const getFromLocalStorage = () => {};
+  const getFromLocalStorage = () => {
+    const lsVal = localStorage.getItem('counterVal');
+    if (lsVal) {
+      setValue(JSON.parse(lsVal));
+    }
+  };
 
   return (
     <div>

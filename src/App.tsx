@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
   const [value, setValue] = useState<number>(0);
+
+  useEffect(() => {
+    getFromLocalStorage();
+  }, []);
 
   const counterHandler = () => {
     setValue(value + 1);

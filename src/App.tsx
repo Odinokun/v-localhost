@@ -21,7 +21,10 @@ function App() {
     }
   };
 
-  const clearLocalStorage = () => localStorage.clear();
+  const clearLocalStorage = () => {
+    localStorage.clear();
+    setValue(0);
+  };
 
   return (
     <div>

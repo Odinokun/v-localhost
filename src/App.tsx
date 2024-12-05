@@ -21,12 +21,15 @@ function App() {
     }
   };
 
+  const clearLocalStorage = () => localStorage.clear();
+
   return (
     <div>
       <h1>{value}</h1>
       <button onClick={counterHandler}>INC</button>
-      <button onClick={setToLocalStorage}>Set to Local Storage</button>
-      <button onClick={getFromLocalStorage}>Get from Local Storage</button>
+      <button onClick={setToLocalStorage}>Set to LS</button>
+      <button onClick={getFromLocalStorage}>Get from LS</button>
+      <button onClick={clearLocalStorage}>Clear LS</button>
     </div>
   );
 }
